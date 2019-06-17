@@ -1,0 +1,840 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+
+    <style amp-custom>
+header{position:relative;width:100vw;height:90px;background-color:#efefef}
+.fullContainer{font-family:'Roboto Condensed',sans-serif;display:block;position:relative;margin:0;padding:0;max-width:1000px;margin:0 auto;box-sizing:border-box}
+.input-cliente{position:relative;top:10px;right:0;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;align-items:center}
+.icone-input-cliente svg{height:27px;padding-right:10px}
+.ampstart-input{background-color:#fff}
+.cliente-dropdown{background-color:#fff;padding:10px 70px 10px 7px;margin-right:10px;border-radius:5px;border:none;box-shadow:0 0 30px 0 rgba(0,0,0,0.10);outline:none}
+.cliente-dropdown select option{text-align:left}
+.reportDashboard1Wrapper{display:grid;font-family:'Roboto Condensed',sans-serif;box-sizing:border-box;position:relative;grid-template-columns:1fr 1.6fr;grid-template-rows:auto;grid-column-gap:25px;color:#415b76}
+.reportDashboard1DataWrapper,.reportDashboard1GraphWrapper{display:flex;flex-direction:column;flex-wrap:nowrap;margin-top:30px}
+.reportDashboard1Tab{font-family:'Roboto Condensed',sans-serif;display:grid;grid-column:3fr 1fr;grid-row:auto;padding:13px;font-size:25px;background-color:#eee2df;font-weight:600;border-radius:10px;margin-bottom:10px;position:relative}
+.reportDashboard2Tab{font-family:'Roboto Condensed',sans-serif;display:flex;flex-direction:row;flex-wrap:nowrap;padding:13px;font-size:25px;background-color:#eee2df;font-weight:600;border-radius:10px;margin-bottom:10px;position:relative}
+.reportDashboard2Tab svg{margin-right:6px;align-self:center}
+.reportDashboard1Tab span{grid-column:1 / 2;grid-row:1 / 2}
+.monthSelect{display:block;position:relative;justify-self:flex-end;border:thin solid #eee2df;border-radius:5px;outline:none;grid-column:2 / 3;grid-row:1 / 2:}
+.reportDashboard1DataGrid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto;grid-gap:20px;padding:10px}
+.reportDataBlockWrapper{display:table-cell;text-align:center;padding:5px;box-shadow:0 0 30px 0 rgba(0,0,0,.1);border-radius:10px}
+.reportDataBlockTitle{display:block;font-size:18px;color:#7b9ba6}
+.reportDataBlockNumber{display:block;font-size:30px;font-weight:600}
+.reportDashboard1ChartWrapper{display:grid;grid-template-columns:40px repeat(31,1fr);grid-template-rows:repeat(6,30px) 20px;font-size:12px;justify-content:center;align-items:center;z-index:1;box-sizing:border-box;position:relative}
+.graphVertNumber1{grid-row:1 / 2;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.ChartSubtitle{position:absolute;right:0;bottom:13px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center}
+.subtitleWrapper{display:grid;grid-template-columns:25px 75px;grid-template-rows:auto;justify-content:center;align-items:center;margin-right:10px}
+.subtitleBlock1{width:20px;height:20px;background-color:#3d6bf5}
+.subtitleBlock2{width:20px;height:20px;background-color:#b96346}
+.subtitleBlock3{width:20px;height:20px;background-color:#0b8e37}
+.subtitleText{font-family:'Roboto Condensed',sans-serif;font-size:12px;margin-left:5px}
+.graphVertNumber1Line{z-index:1;grid-column:2 / -1;grid-row:1 / 2;width:100%;height:2px;background-color:#eee2df}
+.graphVertNumber2{grid-row:2 / 3;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.graphVertNumber2Line{z-index:1;grid-column:2 / -1;grid-row:2 / 3;width:100%;height:2px;background-color:#eee2df}
+.graphVertNumber3{grid-row:3 / 4;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.graphVertNumber3Line{z-index:1;grid-column:2 / -1;grid-row:3 / 4;width:100%;height:2px;background-color:#eee2df}
+.graphVertNumber4{grid-row:4 / 5;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.graphVertNumber4Line{z-index:1;grid-column:2 / -1;grid-row:4 / 5;width:100%;height:2px;background-color:#eee2df}
+.graphVertNumber5{grid-row:5 / 6;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.graphVertNumber5Line{z-index:1;grid-column:2 / -1;grid-row:5 / 6;width:100%;height:2px;background-color:#eee2df}
+.graphVertNumber6{grid-row:6 / 7;grid-column:1 / 2;justify-self:end;padding-right:7px;color:silver}
+.graphVertNumber6Line{z-index:1;grid-column:2 / -1;grid-row:6 / 7;width:100%;height:2px;background-color:#eee2df}
+.graphHorizontalTexts{justify-self:center;color:#7b9ba6;font-weight:600}
+.graphHorizontalLine1{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:2 / 3;grid-row:1 / 7}
+.graphHorizontalLine2{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:3 / 4;grid-row:1 / 7}
+.graphHorizontalLine3{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:4 / 5;grid-row:1 / 7}
+.graphHorizontalLine4{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:5 / 6;grid-row:1 / 7}
+.graphHorizontalLine5{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:6 / 7;grid-row:1 / 7}
+.graphHorizontalLine6{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:6 / 7;grid-row:1 / 7}
+.graphHorizontalLine7{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:7 / 8;grid-row:1 / 7}
+.graphHorizontalLine8{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:8 / 9;grid-row:1 / 7}
+.graphHorizontalLine9{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:9 / 10;grid-row:1 / 7}
+.graphHorizontalLine10{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:10 / 11;grid-row:1 / 7}
+.graphHorizontalLine11{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:11 / 12;grid-row:1 / 7}
+.graphHorizontalLine12{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:12 / 13;grid-row:1 / 7}
+.graphHorizontalLine13{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:13 / 14;grid-row:1 / 7}
+.graphHorizontalLine14{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:14 / 15;grid-row:1 / 7}
+.graphHorizontalLine15{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:15 / 16;grid-row:1 / 7}
+.graphHorizontalLine16{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:16 / 17;grid-row:1 / 7}
+.graphHorizontalLine17{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:17 / 18;grid-row:1 / 7}
+.graphHorizontalLine18{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:18 / 19;grid-row:1 / 7}
+.graphHorizontalLine19{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:19 / 20;grid-row:1 / 7}
+.graphHorizontalLine20{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:20 / 21;grid-row:1 / 7}
+.graphHorizontalLine21{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:21 / 22;grid-row:1 / 7}
+.graphHorizontalLine22{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:22 / 23;grid-row:1 / 7}
+.graphHorizontalLine23{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:23 / 24;grid-row:1 / 7}
+.graphHorizontalLine24{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:24 / 25;grid-row:1 / 7}
+.graphHorizontalLine25{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:25 / 26;grid-row:1 / 7}
+.graphHorizontalLine26{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:26 / 27;grid-row:1 / 7}
+.graphHorizontalLine27{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:27 / 28;grid-row:1 / 7}
+.graphHorizontalLine28{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:28 / 29;grid-row:1 / 7}
+.graphHorizontalLine29{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:29 / 30;grid-row:1 / 7}
+.graphHorizontalLine30{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:30 / 31;grid-row:1 / 7}
+.graphHorizontalLine31{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:31 / 32;grid-row:1 / 7}
+.graphHorizontalLine32{width:2px;height:93%;justify-self:center;background-color:#f6f6f6;box-sizing:border-box;align-self:end;grid-column:32 / 33;grid-row:1 / 7}
+.chartMediaBg{grid-column:2 / -1;grid-row:1 / 7;align-self:end;position:relative;box-sizing:border-box;bottom:8px;z-index:2}
+#chart1,#circles1{z-index:2}
+#chart2,#circles2{z-index:1}
+#chart3,#circles3{z-index:3}
+.classificaBtn{border:none;background-color:transparent;margin:0;padding:0;display:block;position:absolute;right:1px;bottom:3px;cursor:pointer}
+.tabelaClientesHeader{position:sticky;top:-1px}
+.tabelaClientesWrapper{display:flex;flex-direction:column;flex-wrap:nowrap;align-items:center;margin-top:20px;background-color:#fff;box-shadow:0 0 50px 0 rgba(0,0,0,.2);border-radius:10px;padding:10px 5px 10px 10px;height:280px}
+.tabelaClientesWrapper table{border-collapse:collapse;border:thin solid #eee2df;display:table;font-size:15px;position:relative}
+.tabelaClientesWrapper tr:nth-child(even){background-color:#f2f2f2}
+.tabelaClientesWrapper tr:hover{background-color:#ddd}
+.tabelaClientesWrapper table tbody tr th{border:thin solid #eee2df;display:table-cell;padding:5px;position:relative;color:#26547c}
+.tabelaClientesWrapper table tbody tr td{border:thin solid #eee2df;display:table-cell;padding:5px;position:relative;color:#26547c}
+.tabelaClientesHeaderTitle{width:450px}
+.tabelaClientesHeaderClientes{width:150px}
+.tabelaClientesHeaderComando{width:160px}
+.tabelaClientesHeaderExecucao{width:160px}
+a{color:#26547c}
+.scrollbar{float:left;height:275px;width:99%;background:#fff;overflow-y:scroll}
+.force-overflow{min-height:100px;line-height:1.5;font-size:12px;margin-right:8px}
+#style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+#style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+#style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+    </style>
+
+
+
+<!--     <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Article headline",
+      "image": [
+        "thumbnail1.jpg"
+      ],
+      "datePublished": "2015-02-05T08:00:00+08:00"
+    }
+    </script> -->
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+
+
+
+
+
+  </head>
+
+
+  <body>
+
+<header></header>
+
+
+
+
+
+
+
+
+<!-- ##################################################################### -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- input select clientes -->
+<div class="fullContainer">
+  <div class="input-cliente">
+  <div class="icone-input-cliente">
+    <svg id="icone-cliente" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25.2 27" xml:space="preserve">
+      <path fill="#EEE2DF" d="M11,12.5c3.5,0,6.3-2.8,6.3-6.3S14.4,0,11,0S4.7,2.8,4.7,6.3S7.5,12.5,11,12.5z M11,1.6c2.6,0,4.7,2.1,4.7,4.7S13.5,11,11,11S6.3,8.8,6.3,6.3S8.4,1.6,11,1.6z M2.3,23.5c-0.4,0-0.8-0.4-0.8-0.8v-2c0-2.8,2.2-5,5-5c1,0,1.9,0.8,4.4,0.8c2.5,0,3.4-0.8,4.4-0.8c0.1,0,0.3,0,0.4,0c0.1-0.6,0.3-1.1,0.6-1.5c-0.3-0.1-0.7-0.1-1-0.1c-1.4,0-2.1,0.8-4.4,0.8s-3-0.8-4.4-0.8C2.9,14.1,0,17,0,20.7v2C0,24,1.1,25,2.3,25h14.1c-0.3-0.5-0.6-1-0.7-1.6H2.3z M23.6,22.2c0-0.5-0.2-0.9-0.5-1.3c-0.4-0.3-1-0.7-1.8-0.9c-1.2-0.4-2-0.8-2.6-1.4c-0.5-0.6-0.8-1.3-0.8-2.2c0-0.9,0.3-1.6,0.8-2.2c0.5-0.6,1.2-0.9,2.2-1v-1.8h1.2v1.8c0.9,0.1,1.6,0.5,2.2,1.2c0.5,0.7,0.8,1.5,0.8,2.7h-1.5c0-0.8-0.2-1.4-0.6-1.9c-0.4-0.5-0.9-0.7-1.5-0.7c-0.7,0-1.2,0.2-1.5,0.5c-0.3,0.3-0.5,0.8-0.5,1.4c0,0.6,0.2,1,0.5,1.3c0.4,0.3,1,0.6,1.8,0.9c0.8,0.3,1.5,0.6,2,0.9c0.5,0.3,0.8,0.7,1,1.1c0.2,0.4,0.3,0.9,0.3,1.5c0,0.9-0.3,1.7-0.8,2.2c-0.6,0.6-1.3,0.9-2.4,1V27h-1.2v-1.6c-1-0.1-1.8-0.5-2.4-1.1c-0.6-0.6-0.9-1.5-0.9-2.6H19c0,0.8,0.2,1.4,0.6,1.8c0.4,0.4,1,0.6,1.7,0.6c0.7,0,1.3-0.2,1.7-0.5C23.4,23.3,23.6,22.8,23.6,22.2z"></path>
+    </svg>
+  </div>
+
+  <div class="ampstart-input">
+    <select name="name12" id="ip12" class="cliente-dropdown">
+      <option value="">Selecione o Cliente</option>
+      <option value="">Nome Cliente 1</option>
+      <option value="">Nome Cliente 2</option>
+      <option value="">Nome Cliente 3</option>
+    </select>
+  </div>
+</div>
+
+<!-- final input select clientes -->
+
+
+
+
+
+
+
+
+
+<!-- ##################################################################### -->
+
+
+
+
+
+
+
+
+
+
+<!-- grid dashboard principal reports -->
+<div class="reportDashboard1Wrapper">
+  <div class="reportDashboard1DataWrapper">
+    <div class="reportDashboard1Tab">
+      <div>
+        <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+          <path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-8c-6.627 0-12 5.373-12 12v52H128V12c0-6.627-5.373-12-12-12h-8c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zM48 96h352c8.822 0 16 7.178 16 16v48H32v-48c0-8.822 7.178-16 16-16zm352 384H48c-8.822 0-16-7.178-16-16V192h384v272c0 8.822-7.178 16-16 16zm-66.467-194.937l-134.791 133.71c-4.7 4.663-12.288 4.642-16.963-.046l-67.358-67.552c-4.683-4.697-4.672-12.301.024-16.985l8.505-8.48c4.697-4.683 12.301-4.672 16.984.024l50.442 50.587 117.782-116.837c4.709-4.671 12.313-4.641 16.985.068l8.458 8.527c4.672 4.709 4.641 12.313-.068 16.984z"/>
+        </svg>
+        <span>Dados Janeiro/2019</span>
+      </div>
+      <select class="monthSelect">
+        <option value="volvo">Jan/2019</option>
+        <option value="saab">fev/2019</option>
+        <option value="mercedes">mar/2019</option>
+        <option value="audi">abril/2019</option>
+      </select>
+    </div>
+    <div class="reportDashboard1DataGrid">
+      <div class="reportDataBlockWrapper">
+        <span class="reportDataBlockTitle">E-mails enviados</span>
+        <span class="reportDataBlockNumber">10.000</span>
+      </div>
+      <div class="reportDataBlockWrapper">
+        <span class="reportDataBlockTitle">Saldo Disponível</span>
+        <span class="reportDataBlockNumber">20.000</span>
+      </div>
+      <div class="reportDataBlockWrapper">
+        <span class="reportDataBlockTitle">Releases disparados</span>
+        <span class="reportDataBlockNumber">10.000</span>
+      </div>
+      <div class="reportDataBlockWrapper">
+        <span class="reportDataBlockTitle">Denúncias por Spam</span>
+        <span class="reportDataBlockNumber">100</span>
+      </div>
+    </div>
+  </div>
+  <div class="reportDashboard1GraphWrapper">
+    <div class="reportDashboard2Tab">
+      <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="23" height="23">
+        <path d="M500 416c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12v340h468zM372 162l-84 54-86.5-84.5c-5.1-5.1-13.4-4.6-17.9 1L64 288v96h416l-90.3-216.7c-3-6.9-11.5-9.4-17.7-5.3zM96 299.2l98.7-131.3 89.3 89.3 85.8-57.2 61.7 152H96v-52.8z"/>
+      </svg>
+      <span>Performance</span>
+      <div class="ChartSubtitle">
+        <div class="subtitleWrapper">
+          <div class="subtitleBlock1"></div>
+          <span class="subtitleText">Média da agência</span>
+        </div>
+        <div class="subtitleWrapper">
+          <div class="subtitleBlock2"></div>
+          <span class="subtitleText">Expectativa I'MAX</span>
+        </div>
+        <div class="subtitleWrapper">
+          <div class="subtitleBlock3"></div>
+          <span class="subtitleText">Média Nome do Cliente</span>
+        </div>
+      </div>
+    </div>
+    <div class="reportDashboard1ChartWrapper">
+      <!-- vertical scale numbers -->
+      <span class="graphVertNumber1">10 Mil</span>
+      <span class="graphVertNumber1Line"></span>
+      <span class="graphVertNumber2">8 Mil</span>
+      <span class="graphVertNumber2Line"></span>
+      <span class="graphVertNumber3">6 Mil</span>
+      <span class="graphVertNumber3Line"></span>
+      <span class="graphVertNumber4">4 Mil</span>
+      <span class="graphVertNumber4Line"></span>
+      <span class="graphVertNumber5">2 Mil</span>
+      <span class="graphVertNumber5Line"></span>
+      <span class="graphVertNumber6">0</span>
+      <span class="graphVertNumber6Line"></span>
+
+      <!-- horizontal days -->
+      <span class="graphHorizontalTexts">Dias</span>
+      <span class="graphHorizontalTexts">1</span>
+      <span class="graphHorizontalTexts">2</span>
+      <span class="graphHorizontalTexts">3</span>
+      <span class="graphHorizontalTexts">4</span>
+      <span class="graphHorizontalTexts">5</span>
+      <span class="graphHorizontalTexts">6</span>
+      <span class="graphHorizontalTexts">7</span>
+      <span class="graphHorizontalTexts">8</span>
+      <span class="graphHorizontalTexts">9</span>
+      <span class="graphHorizontalTexts">10</span>
+      <span class="graphHorizontalTexts">11</span>
+      <span class="graphHorizontalTexts">12</span>
+      <span class="graphHorizontalTexts">13</span>
+      <span class="graphHorizontalTexts">14</span>
+      <span class="graphHorizontalTexts">15</span>
+      <span class="graphHorizontalTexts">16</span>
+      <span class="graphHorizontalTexts">17</span>
+      <span class="graphHorizontalTexts">18</span>
+      <span class="graphHorizontalTexts">19</span>
+      <span class="graphHorizontalTexts">20</span>
+      <span class="graphHorizontalTexts">21</span>
+      <span class="graphHorizontalTexts">22</span>
+      <span class="graphHorizontalTexts">23</span>
+      <span class="graphHorizontalTexts">24</span>
+      <span class="graphHorizontalTexts">25</span>
+      <span class="graphHorizontalTexts">26</span>
+      <span class="graphHorizontalTexts">27</span>
+      <span class="graphHorizontalTexts">28</span>
+      <span class="graphHorizontalTexts">29</span>
+      <span class="graphHorizontalTexts">30</span>
+      <span class="graphHorizontalTexts">31</span>
+
+
+      <span class="graphHorizontalLine1"></span>
+      <span class="graphHorizontalLine2"></span>
+      <span class="graphHorizontalLine3"></span>
+      <span class="graphHorizontalLine4"></span>
+      <span class="graphHorizontalLine5"></span>
+      <span class="graphHorizontalLine6"></span>
+      <span class="graphHorizontalLine7"></span>
+      <span class="graphHorizontalLine8"></span>
+      <span class="graphHorizontalLine9"></span>
+      <span class="graphHorizontalLine10"></span>
+      <span class="graphHorizontalLine11"></span>
+      <span class="graphHorizontalLine12"></span>
+      <span class="graphHorizontalLine13"></span>
+      <span class="graphHorizontalLine14"></span>
+      <span class="graphHorizontalLine15"></span>
+      <span class="graphHorizontalLine16"></span>
+      <span class="graphHorizontalLine17"></span>
+      <span class="graphHorizontalLine18"></span>
+      <span class="graphHorizontalLine19"></span>
+      <span class="graphHorizontalLine20"></span>
+      <span class="graphHorizontalLine21"></span>
+      <span class="graphHorizontalLine22"></span>
+      <span class="graphHorizontalLine23"></span>
+      <span class="graphHorizontalLine24"></span>
+      <span class="graphHorizontalLine25"></span>
+      <span class="graphHorizontalLine26"></span>
+      <span class="graphHorizontalLine27"></span>
+      <span class="graphHorizontalLine28"></span>
+      <span class="graphHorizontalLine29"></span>
+      <span class="graphHorizontalLine30"></span>
+      <span class="graphHorizontalLine31"></span>
+      <span class="graphHorizontalLine32"></span>
+
+
+      <div class="chartMediaBg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<svg class="chartMediaSvg" id="chartMediaSvg" fill="url(#my-cool-gradient) #447799;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 529 163.5" xml:space="preserve">
+  <defs>
+    <linearGradient id="grad1" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(255,0,0);stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:0"/>
+    </linearGradient>
+
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(217, 83, 38);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(217, 83, 38);stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:rgb(217, 83, 38);stop-opacity:0"/>
+    </linearGradient>
+
+    <linearGradient id="grad3" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(89, 120, 166);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(89, 120, 166);stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:rgb(89, 120, 166);stop-opacity:0"/>
+    </linearGradient>
+
+    <linearGradient id="grad4" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(0, 102, 255);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(0, 102, 255);stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:rgb(0, 102, 255);stop-opacity:0"/>
+    </linearGradient>
+
+    <linearGradient id="grad5" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(11, 142, 55);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(11, 142, 55);stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:rgb(11, 142, 55);stop-opacity:0"/>
+    </linearGradient>
+
+    <linearGradient id="grad6" x1="100%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(46, 107, 66);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(46, 107, 66);stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:rgb(46, 107, 66);stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+
+
+
+<polygon fill="url(#grad3)" id="chart1" stroke="url(#grad4)" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10"
+  points="
+
+  528.5,163
+  0.5,163
+  0.5,160.5
+  
+
+  9,30
+  26,10
+  43,10
+  60,30
+  76,50
+  95,40
+  110,60
+  128,30
+  145,20
+  161,30
+  179,20
+  195.5,60
+  213,100
+  231,110
+  248,70
+  265,140
+  281,130
+  300,140
+  314,140
+  334,80
+  349.5,80
+  366.5,90
+  384.5,40
+  401,60
+  417.5,70
+  435.5,70
+  450.5,90
+  470,120
+  487,100
+  503,130
+  519.5,40
+
+
+  528.5,160.5 "/>
+
+<g id="circles1">
+<circle fill="#3d6bf5" cx="9" cy="30" r="3"/>
+<circle fill="#3d6bf5" cx="26" cy="10" r="3"/>
+<circle fill="#3d6bf5" cx="43" cy="10" r="3"/>
+<circle fill="#3d6bf5" cx="60" cy="30" r="3"/>
+<circle fill="#3d6bf5" cx="76" cy="50" r="3"/>
+<circle fill="#3d6bf5" cx="95" cy="40" r="3"/>
+<circle fill="#3d6bf5" cx="110" cy="60" r="3"/>
+<circle fill="#3d6bf5" cx="128" cy="30" r="3"/>
+<circle fill="#3d6bf5" cx="145" cy="20" r="3"/>
+<circle fill="#3d6bf5" cx="161" cy="30" r="3"/>
+<circle fill="#3d6bf5" cx="179" cy="20" r="3"/>
+<circle fill="#3d6bf5" cx="195.5" cy="60" r="3"/>
+<circle fill="#3d6bf5" cx="213" cy="100" r="3"/>
+<circle fill="#3d6bf5" cx="231" cy="110" r="3"/>
+<circle fill="#3d6bf5" cx="248" cy="70" r="3"/>
+<circle fill="#3d6bf5" cx="265" cy="140" r="3"/>
+<circle fill="#3d6bf5" cx="281" cy="130" r="3"/>
+<circle fill="#3d6bf5" cx="300" cy="140" r="3"/>
+<circle fill="#3d6bf5" cx="314" cy="140" r="3"/>
+<circle fill="#3d6bf5" cx="334" cy="80" r="3"/>
+<circle fill="#3d6bf5" cx="349.5" cy="80" r="3"/>
+<circle fill="#3d6bf5" cx="366.5" cy="90" r="3"/>
+<circle fill="#3d6bf5" cx="384.5" cy="40" r="3"/>
+<circle fill="#3d6bf5" cx="401" cy="60" r="3"/>
+<circle fill="#3d6bf5" cx="417.5" cy="70" r="3"/>
+<circle fill="#3d6bf5" cx="435.5" cy="70" r="3"/>
+<circle fill="#3d6bf5" cx="450.5" cy="90" r="3"/>
+<circle fill="#3d6bf5" cx="470" cy="120" r="3"/>
+<circle fill="#3d6bf5" cx="487" cy="100" r="3"/>
+<circle fill="#3d6bf5" cx="503" cy="130" r="3"/>
+<circle fill="#3d6bf5" cx="519.5" cy="40" r="3"/>
+</g>
+
+
+
+  <polygon fill="url(#grad1)" id="chart2" stroke="url(#grad2)" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10"
+  points="
+
+  528.5,163
+  0.5,163
+  0.5,160.5
+  
+
+  9,40
+  26,100
+  43,10
+  60,70
+  76,80
+  95,60
+  110,70
+  128,60
+  145,90
+  161,80
+  179,60
+  195.5,80
+  213,60
+  231,80
+  248,70
+  265,40
+  281,30
+  300,30
+  314,10
+  334,40
+  349.5,20
+  366.5,30
+  384.5,20
+  401,40
+  417.5,20
+  435.5,30
+  450.5,10
+  470,60
+  487,20
+  503,30
+  519.5,10
+
+
+  528.5,160.5 "/>
+
+
+<g id="circles2">
+<circle fill="#b96346" cx="9" cy="40" r="3"/>
+<circle fill="#b96346" cx="26" cy="100" r="3"/>
+<circle fill="#b96346" cx="43" cy="10" r="3"/>
+<circle fill="#b96346" cx="60" cy="70" r="3"/>
+<circle fill="#b96346" cx="76" cy="80" r="3"/>
+<circle fill="#b96346" cx="95" cy="60" r="3"/>
+<circle fill="#b96346" cx="110" cy="70" r="3"/>
+<circle fill="#b96346" cx="128" cy="60" r="3"/>
+<circle fill="#b96346" cx="145" cy="90" r="3"/>
+<circle fill="#b96346" cx="161" cy="80" r="3"/>
+<circle fill="#b96346" cx="179" cy="60" r="3"/>
+<circle fill="#b96346" cx="195.5" cy="80" r="3"/>
+<circle fill="#b96346" cx="213" cy="60" r="3"/>
+<circle fill="#b96346" cx="231" cy="80" r="3"/>
+<circle fill="#b96346" cx="248" cy="70" r="3"/>
+<circle fill="#b96346" cx="265" cy="40" r="3"/>
+<circle fill="#b96346" cx="281" cy="30" r="3"/>
+<circle fill="#b96346" cx="300" cy="30" r="3"/>
+<circle fill="#b96346" cx="314" cy="10" r="3"/>
+<circle fill="#b96346" cx="334" cy="40" r="3"/>
+<circle fill="#b96346" cx="349.5" cy="20" r="3"/>
+<circle fill="#b96346" cx="366.5" cy="30" r="3"/>
+<circle fill="#b96346" cx="384.5" cy="20" r="3"/>
+<circle fill="#b96346" cx="401" cy="40" r="3"/>
+<circle fill="#b96346" cx="417.5" cy="20" r="3"/>
+<circle fill="#b96346" cx="435.5" cy="30" r="3"/>
+<circle fill="#b96346" cx="450.5" cy="10" r="3"/>
+<circle fill="#b96346" cx="470" cy="60" r="3"/>
+<circle fill="#b96346" cx="487" cy="20" r="3"/>
+<circle fill="#b96346" cx="503" cy="30" r="3"/>
+<circle fill="#b96346" cx="519.5" cy="10" r="3"/>
+</g>
+
+
+
+
+
+
+
+<polygon fill="url(#grad5)" id="chart3" stroke="url(#grad6)" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10"
+  points="
+
+  528.5,163
+  0.5,163
+  0.5,160.5
+  
+
+  9,100
+  26,80
+  43,50
+  60,120
+  76,100
+  95,90
+  110,100
+  128,120
+  145,150
+  161,120
+  179,110
+  195.5,70
+  213,130
+  231,140
+  248,130
+  265,110
+  281,80
+  300,70
+  314,90
+  334,90
+  349.5,120
+  366.5,110
+  384.5,90
+  401,120
+  417.5,120
+  435.5,130
+  450.5,110
+  470,90
+  487,80
+  503,80
+  519.5,110
+
+
+  528.5,160.5 "/>
+
+
+<g id="circles3">
+<circle fill="#0b8e37" cx="9" cy="100" r="3"/>
+<circle fill="#0b8e37" cx="26" cy="80" r="3"/>
+<circle fill="#0b8e37" cx="43" cy="50" r="3"/>
+<circle fill="#0b8e37" cx="60" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="76" cy="100" r="3"/>
+<circle fill="#0b8e37" cx="95" cy="90" r="3"/>
+<circle fill="#0b8e37" cx="110" cy="100" r="3"/>
+<circle fill="#0b8e37" cx="128" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="145" cy="150" r="3"/>
+<circle fill="#0b8e37" cx="161" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="179" cy="110" r="3"/>
+<circle fill="#0b8e37" cx="195.5" cy="70" r="3"/>
+<circle fill="#0b8e37" cx="213" cy="130" r="3"/>
+<circle fill="#0b8e37" cx="231" cy="140" r="3"/>
+<circle fill="#0b8e37" cx="248" cy="130" r="3"/>
+<circle fill="#0b8e37" cx="265" cy="110" r="3"/>
+<circle fill="#0b8e37" cx="281" cy="80" r="3"/>
+<circle fill="#0b8e37" cx="300" cy="70" r="3"/>
+<circle fill="#0b8e37" cx="314" cy="90" r="3"/>
+<circle fill="#0b8e37" cx="334" cy="90" r="3"/>
+<circle fill="#0b8e37" cx="349.5" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="366.5" cy="110" r="3"/>
+<circle fill="#0b8e37" cx="384.5" cy="90" r="3"/>
+<circle fill="#0b8e37" cx="401" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="417.5" cy="120" r="3"/>
+<circle fill="#0b8e37" cx="435.5" cy="130" r="3"/>
+<circle fill="#0b8e37" cx="450.5" cy="110" r="3"/>
+<circle fill="#0b8e37" cx="470" cy="90" r="3"/>
+<circle fill="#0b8e37" cx="487" cy="80" r="3"/>
+<circle fill="#0b8e37" cx="503" cy="80" r="3"/>
+<circle fill="#0b8e37" cx="519.5" cy="110" r="3"/>
+</g>
+
+
+
+</svg>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- final grid dashboard principal reports -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tabela clientes -->
+
+<div class="tabelaClientesWrapper">
+
+  <div class="lista-anexos scrollbar" id="style-3-scrollbar">
+    <div class="force-overflow">
+
+  <table>
+    <tbody>
+      <tr class="tabelaClientesHeader">
+        <th class="tabelaClientesHeaderTitle">
+          <span>Título</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </th>
+        <th class="tabelaClientesHeaderClientes">
+          <span>Cliente</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+        </th>
+        <th class="tabelaClientesHeaderComando">
+          <span>Data do Comando</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+        </th>
+        <th class="tabelaClientesHeaderExecucao">
+          <span>Data de Execução</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+        </th>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+      <tr>
+        <td><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></td>
+        <td><a href="">Nome Cliente</a></td>
+        <td>12/12/2019-13:34h</td>
+        <td>12/12/2019-13:34h</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+</div>
+</div>
+
+<!-- final tabela clientes -->
+
+
+<!-- ##################################################################### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- final full container -->
+</div>
+
+
+
+
+
+
+  </body>
+</html>
